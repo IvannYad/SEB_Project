@@ -59,21 +59,23 @@ namespace MyProgram
         private void ShowTableIntoConsole()
         {
             Node current = _head;
-            Console.WriteLine($"{"",38}~~~ {"List"} ~~~{"",38}");
-            Console.WriteLine("\t-------------------------------------------------------------------------------");
-            Console.WriteLine($"\t|{"",-20}|{"",-30}|{"",-7}|{"",-8}|{"",-8}|");
-            Console.WriteLine($"\t|{"Author",-20}|{"BookName",-30}|{"Year",-7}|{"Pages",-8}|{"Price",-8}|");
-            Console.WriteLine($"\t|{"",-20}|{"",-30}|{"",-7}|{"",-8}|{"",-8}|");
-            Console.WriteLine("\t-------------------------------------------------------------------------------");
+            Console.WriteLine($"{"",50}~~~ {"List"} ~~~{"",38}");
+            Console.WriteLine("\t---------------------------------------------------------------------------------------------");
+            Console.WriteLine($"\t|{"",-10}|{"",-20}|{"",-30}|{"",-7}|{"",-8}|{"",-11}|");
+            Console.WriteLine($"\t|{" Index",-10}|{" Author",-20}|{" BookName",-30}|{" Year",-7}|{" Pages",-8}|{" Price",-11}|");
+            Console.WriteLine($"\t|{"",-10}|{"",-20}|{"",-30}|{"",-7}|{"",-8}|{"",-11}|");
+            Console.WriteLine("\t---------------------------------------------------------------------------------------------");
+            int i = 0;
             while (current != null)
             {
-                Console.WriteLine($"\t|{current.Information.Author,-20}|" +
-                    $"{current.Information.BookTitle,-30}|" +
+                Console.WriteLine($"\t|{" " + i + ".",-10}| {current.Information.Author,-19}| " +
+                    $"{current.Information.BookTitle,-29}|" +
                     $" {current.Information.YearOfPublishing,-6}|" +
-                    $" {current.Information.Pages,-6} |" +
-                    $" {current.Information.Price,-6} |");
-                Console.WriteLine("\t-------------------------------------------------------------------------------");
+                    $" {current.Information.Pages,-7}|" +
+                    $" {current.Information.Price,-10}|");
+                Console.WriteLine("\t---------------------------------------------------------------------------------------------");
                 current = current.Next;
+                i++;
             }
             Console.WriteLine();
             Console.WriteLine();
@@ -84,21 +86,23 @@ namespace MyProgram
         {
             StreamWriter writer = new StreamWriter("C:\\Users\\User\\Desktop\\ПЗ\\ВІПЗ лаби\\Сама програма\\Result.txt", true);
             Node current = _head;
-            writer.WriteLine($"{"",38}~~~ {"List"} ~~~{"",38}");
-            writer.WriteLine("\t-------------------------------------------------------------------------------");
-            writer.WriteLine($"\t|{"",-20}|{"",-30}|{"",-7}|{"",-8}|{"",-8}|");
-            writer.WriteLine($"\t|{"Author",-20}|{"BookName",-30}|{"Year",-7}|{"Pages",-8}|{"Price",-8}|");
-            writer.WriteLine($"\t|{"",-20}|{"",-30}|{"",-7}|{"",-8}|{"",-8}|");
-            writer.WriteLine("\t-------------------------------------------------------------------------------");
+            writer.WriteLine($"{"",50}~~~ {"List"} ~~~{"",38}");
+            writer.WriteLine("\t---------------------------------------------------------------------------------------------");
+            writer.WriteLine($"\t|{"",-10}|{"",-20}|{"",-30}|{"",-7}|{"",-8}|{"",-11}|");
+            writer.WriteLine($"\t|{" Index",-10}|{" Author",-20}|{" BookName",-30}|{" Year",-7}|{" Pages",-8}|{" Price",-11}|");
+            writer.WriteLine($"\t|{"",-10}|{"",-20}|{"",-30}|{"",-7}|{"",-8}|{"",-11}|");
+            writer.WriteLine("\t---------------------------------------------------------------------------------------------");
+            int i = 0;
             while (current != null)
             {
-                writer.WriteLine($"\t|{current.Information.Author,-20}|" +
-                    $"{current.Information.BookTitle,-30}|" +
+                writer.WriteLine($"\t|{" " + i + ".",-10}| {current.Information.Author,-19}| " +
+                    $"{current.Information.BookTitle,-29}|" +
                     $" {current.Information.YearOfPublishing,-6}|" +
-                    $" {current.Information.Pages,-6} |" +
-                    $" {current.Information.Price,-6} |");
-                writer.WriteLine("\t-------------------------------------------------------------------------------");
+                    $" {current.Information.Pages,-7}|" +
+                    $" {current.Information.Price,-10}|");
+                writer.WriteLine("\t---------------------------------------------------------------------------------------------");
                 current = current.Next;
+                i++;
             }
             writer.WriteLine();
             writer.WriteLine();

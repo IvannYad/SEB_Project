@@ -24,6 +24,9 @@ namespace MyProgram
         // Змінна для роботи з Output запитом.
         private Output _output;
 
+        // Змінна для роботи з Edit запитом.
+        private Edit _edit;
+
         // Метод показу меню в консоль і повернення вибору.
         private int DispLayMenuAndChoose(bool isInputPerformed)
         {
@@ -33,10 +36,11 @@ namespace MyProgram
                 Console.WriteLine("\t\t\t    ~~~ MENU ~~~\n");
                 Console.WriteLine("\t 1. Input");
                 Console.WriteLine("\t 2. Add");
-                Console.WriteLine("\t 3. Select");
-                Console.WriteLine("\t 4. Delete");
-                Console.WriteLine("\t 5. Sort");
-                Console.WriteLine("\t 6. Output");
+                Console.WriteLine("\t 3. Edit");
+                Console.WriteLine("\t 4. Select");
+                Console.WriteLine("\t 5. Delete");
+                Console.WriteLine("\t 6. Sort");
+                Console.WriteLine("\t 7. Output");
                 Console.WriteLine();
             }
             else
@@ -44,10 +48,11 @@ namespace MyProgram
                 Console.WriteLine("------------------------------------------------------------------");
                 Console.WriteLine("\t\t\t    ~~~ MENU ~~~\n");
                 Console.WriteLine("\t 1. Add");
-                Console.WriteLine("\t 2. Select");
-                Console.WriteLine("\t 3. Delete");
-                Console.WriteLine("\t 4. Sort");
-                Console.WriteLine("\t 5. Output");
+                Console.WriteLine("\t 2. Edit");
+                Console.WriteLine("\t 3. Select");
+                Console.WriteLine("\t 4. Delete");
+                Console.WriteLine("\t 5. Sort");
+                Console.WriteLine("\t 6. Output");
                 Console.WriteLine();
             }
 
@@ -57,7 +62,7 @@ namespace MyProgram
                 Console.Write("Your choice : ");
                 if (int.TryParse(Console.ReadLine(), out choice))
                 {
-                    if (choice < 1 || choice > 6)
+                    if (choice < 1 || choice > 7)
                     {
                         Console.WriteLine("Error. Invalid number!!!! TRY again\n");
                         continue;
@@ -65,7 +70,7 @@ namespace MyProgram
 
                     if (!isInputPerformed)
                     {
-                        if (choice >= 3 && choice <= 6)
+                        if (choice >= 3 && choice <= 7)
                         {
                             Console.WriteLine("Error. Invalid operation choosed(list is empty). TRY again\n");
                             continue;
@@ -120,6 +125,11 @@ namespace MyProgram
                     _output.OutputFunc();
                     break;
 
+                case (int)Commands.Edit:
+                    _edit = new Edit(s_head);
+                    _edit.EditFunc();
+                    break;
+
                 default:
                     break;
             }
@@ -139,6 +149,7 @@ namespace MyProgram
     {
         Input = 1,
         Add,
+        Edit,
         Select,
         Delete,
         Sort,
