@@ -13,7 +13,7 @@ namespace MyProgram
         public static bool IsInputPerformed = false;
 
         // Голова списку.
-        private  Node _head;
+        private  static Node s_head;
 
         // Змінна для роботи з Select запитом.
         private Select _select;
@@ -94,29 +94,29 @@ namespace MyProgram
                 case (int)Commands.Input:
                     IsInputPerformed = true;
                     _input = new Input();
-                    _head = _input.InputFunc();
+                    s_head = _input.InputFunc();
                     break;
 
                 case (int)Commands.Add:
                     IsInputPerformed = true;
-                    ListCommands.Add(ref _head);
+                    ListCommands.Add(ref s_head);
                     break;
 
                 case (int)Commands.Select:
-                    _select = new Select(_head);
+                    _select = new Select(s_head);
                     _select.SelectFunc();
                     break;
 
                 case (int)Commands.Delete:
-                    ListCommands.Delete(ref _head);
+                    ListCommands.Delete(ref s_head);
                     break;
 
                 case (int)Commands.Sort:
-                    ListCommands.SortBooksWithPagesLessThanAverage(_head);
+                    ListCommands.SortBooksWithPagesLessThanAverage(s_head);
                     break;
 
                 case (int)Commands.Output:
-                    _output = new Output(_head);
+                    _output = new Output(s_head);
                     _output.OutputFunc();
                     break;
 
