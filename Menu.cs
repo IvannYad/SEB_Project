@@ -62,14 +62,14 @@ namespace MyProgram
                 Console.Write("Your choice : ");
                 if (int.TryParse(Console.ReadLine(), out choice))
                 {
-                    if (choice < 1 || choice > 7)
-                    {
-                        Console.WriteLine("Error. Invalid number!!!! TRY again\n");
-                        continue;
-                    }
-
                     if (!isInputPerformed)
                     {
+                        if (choice < 1 || choice > 7)
+                        {
+                            Console.WriteLine("Error. Invalid number!!!! TRY again\n");
+                            continue;
+                        }
+
                         if (choice >= 3 && choice <= 7)
                         {
                             Console.WriteLine("Error. Invalid operation choosed(list is empty). TRY again\n");
@@ -78,8 +78,16 @@ namespace MyProgram
 
                         break;
                     }
+                    else
+                    {
+                        if (choice < 1 || choice > 6)
+                        {
+                            Console.WriteLine("Error. Invalid number!!!! TRY again\n");
+                            continue;
+                        }
 
-                    break;
+                        break;
+                    }
                 }
 
                 Console.WriteLine("Error, you entered invalid symbols!!!! TRY again\n");
