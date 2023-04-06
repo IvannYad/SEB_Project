@@ -149,7 +149,7 @@ namespace MyProgram
                     continue;
                 }
 
-                if (infor.YearOfPublishing < 0 || infor.YearOfPublishing > 2023)
+                if (infor.YearOfPublishing < 1455 || infor.YearOfPublishing > 2023)
                 {
                     Console.WriteLine("Error. YearOfPublishing is not correct!!!! TRY again\n");
                     i--;
