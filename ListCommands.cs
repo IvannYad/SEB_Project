@@ -76,7 +76,7 @@ namespace MyProgram
                     current.Next = new Node();
                     current = current.Next;
                 }
-
+                
 
                 Info infor;
                 try

@@ -120,7 +120,9 @@ namespace MyProgram
                 char[] separator = { '<', '>' };
                 string[] temp = row.Split(separator);
                 temp = temp.Where(x => x != "").ToArray();
-                if (temp[0].Length > 20 || temp[1].Length > 50)
+                if (temp[0].Length > 80 || temp[1].Length > 80
+                    || string.IsNullOrEmpty(temp[0]) || string.IsNullOrWhiteSpace(temp[0])
+                    || string.IsNullOrEmpty(temp[1]) || string.IsNullOrWhiteSpace(temp[1]))
                 {
                     Console.WriteLine("Error. String parameters are too long !!!! TRY again\n");
                     i--;
