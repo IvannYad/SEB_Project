@@ -139,7 +139,7 @@ namespace MyProgram
                     || string.IsNullOrEmpty(temp[0]) || string.IsNullOrWhiteSpace(temp[0])
                     || string.IsNullOrEmpty(temp[1]) || string.IsNullOrWhiteSpace(temp[1]))
                 {
-                    Console.WriteLine("Error. String parameters are too long !!!! TRY again\n");
+                    Console.WriteLine("Error. String parameters are too long or empty !!!! TRY again\n");
                     i--;
                     continue;
                 }
