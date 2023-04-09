@@ -7,6 +7,7 @@ using MyProgram;
 
 namespace MyProgram
 {
+    // Клас для редагування даних у вибраному полі вибраного елемента.
     public class Edit
     {
         // Голова однозв'язного списку.

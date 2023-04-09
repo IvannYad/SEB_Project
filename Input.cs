@@ -34,17 +34,27 @@ namespace MyProgram
                 Console.WriteLine("Error, you entered invalid symbols!!!! TRY again\n");
 
             } while (true);
-
+            Node headd = null;
             if (inpChoice == 1)
             {
                 Node head = FromConsoleToLinkedList();
                 Console.WriteLine("\n\t === SUCCESS ===");
+                Menu.IsInputPerformed = true;
                 return head;
             }
 
-            string path = @"C:\Users\User\Desktop\ПЗ\ВІПЗ лаби\Сама програма\Information.txt";
-            Node headd = FromFileToLinkedList(path);
-            Console.WriteLine("\n\t  === SUCCESS ===");
+            try
+            {
+                string path = @"C:\Users\User\Desktop\ПЗ\ВІПЗ лаби\Сама програма\Information.txt";
+                headd = FromFileToLinkedList(path);
+                Console.WriteLine("\n\t  === SUCCESS ===");
+                Menu.IsInputPerformed = true;
+            }
+            catch (EndOfStreamException e)
+            {
+                Console.WriteLine("File is empty\n");
+            }
+            
             return headd;
         }
 
@@ -57,6 +67,11 @@ namespace MyProgram
             Node head = null;
             Node current = null;
             StreamReader reader = new StreamReader(path);
+            // Якщо файл пустий кидаємо exception.
+            if (reader.EndOfStream)
+            {
+                throw new EndOfStreamException();
+            }
             while (!reader.EndOfStream)
             {
                 temp = (reader.ReadLine()).Split('/');

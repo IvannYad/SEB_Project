@@ -105,7 +105,6 @@ namespace MyProgram
             switch (choice)
             {
                 case (int)Commands.Input:
-                    IsInputPerformed = true;
                     _input = new Input();
                     s_head = _input.InputFunc();
                     break;
