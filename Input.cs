@@ -12,7 +12,7 @@ namespace MyProgram
         // Головний метод для роботи з Input запитом.
         public Node InputFunc()
         {
-            Console.WriteLine("------------------------------------------------------------------");
+            Console.WriteLine("---------------------------------------------------------");
             Console.WriteLine("                  ~ Input ~               \n");
             Console.WriteLine("   1 - From Console       2 - From File    \n");
 
@@ -137,7 +137,8 @@ namespace MyProgram
                 temp = temp.Where(x => x != "").ToArray();
                 if (temp[0].Length > 80 || temp[1].Length > 80
                     || string.IsNullOrEmpty(temp[0]) || string.IsNullOrWhiteSpace(temp[0])
-                    || string.IsNullOrEmpty(temp[1]) || string.IsNullOrWhiteSpace(temp[1]))
+                    || string.IsNullOrEmpty(temp[1]) || string.IsNullOrWhiteSpace(temp[1])
+                    || string.IsNullOrEmpty(temp[0].Trim()) || string.IsNullOrEmpty(temp[1].Trim()))
                 {
                     Console.WriteLine("Error. String parameters are too long or empty !!!! TRY again\n");
                     i--;
