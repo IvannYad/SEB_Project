@@ -14,6 +14,5 @@
      ```
      
   **3. Create and seed local database**  
-   * Run project and make sure that database was created and filled with data( note that not all tables will be populated with data)
-
+   * Run project and make sure that database was created and filled with data
 
