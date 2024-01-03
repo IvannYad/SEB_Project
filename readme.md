@@ -1,4 +1,11 @@
 ### Setup
+  1. Change connection string  
+   (Go to **appsettings.json** and write your local database connection string)
+  2. Create local database  
+   (Run project and make sure that database was created filled with data)
+
+
+### Setup
   **1. Change connection string**  
    * Go to `appsettings.Local.json` in **StreetCode.WebApi** project and write your local database connection string in following format:
     
