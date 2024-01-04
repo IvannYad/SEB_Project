@@ -10,7 +10,7 @@
    * Go to `appsettings.Local.json` in **StreetCode.WebApi** project and write your local database connection string in following format:
     
      ```
-      Server={local_server_name};Database=StreetcodeDb;User Id={username};Password={password};MultipleActiveResultSets=true;
+      Server={local_server_name};Database=StreetcodeDb;User Id={username};Password={password};MultipleActiveResultSets=true;TrustServerCertificate=true;
      ```
 
   **2. Add database seeding**
